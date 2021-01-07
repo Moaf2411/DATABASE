@@ -8,6 +8,7 @@ public class TextPool : MonoBehaviour
 {
    [SerializeField] private Text textPrefab;
    [SerializeField] private Canvas result;
+   private List<Text> given;
    private Queue<Text> textQueue;
    private Text t;
   
@@ -16,7 +17,7 @@ public class TextPool : MonoBehaviour
    {
       textQueue = new Queue<Text>();
       GrowPool(20);
-      
+      given=new List<Text>();
    }
 
    private void GrowPool(int q)
@@ -37,7 +38,17 @@ public class TextPool : MonoBehaviour
          
          t = textQueue.Dequeue();
          t.transform.SetParent(result.transform);
+         given.Add(t);
          return t;
+   }
+
+   public void SetFalse()
+   {
+      foreach (var t in given)
+      {
+         t.gameObject.SetActive(false);
+         textQueue.Enqueue(t);
+      }
    }
 
    
