@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="dbHandler.cs" t="Include" />
         <e p="QUERY1.cs" t="Include" />
+        <e p="Query2.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="TextPool.cs" t="Include" />
         </e>

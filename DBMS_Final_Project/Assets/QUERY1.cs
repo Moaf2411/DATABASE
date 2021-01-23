@@ -14,12 +14,12 @@ public class QUERY1 : MonoBehaviour
    private string Match_id;
 
    private float textWidth,canvasWidth;
-   public void Query1()
+   public void Query1()                                         //GETTING DATA FROM TABLES
    {
       
       Match_id = Match.text.ToString();
       
-      String conn = "URI=file:" + Application.dataPath + "/Final_Project.db";
+      String conn = "URI=file:" + Application.dataPath + "/StreamingAssets/Final_Project.db";
       IDbConnection dbconn;
       dbconn= (IDbConnection)new SqliteConnection(conn);
       dbconn.Open();
